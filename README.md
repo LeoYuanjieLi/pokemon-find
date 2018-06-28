@@ -1,3 +1,5 @@
 # Pokemon Find
 
-place holder
+## What's done:
+- Set up React app
+- implement search bar
