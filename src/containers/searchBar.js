@@ -1,7 +1,10 @@
 import React, { Component }from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchPokemon } from '../actions/index';
 
 import '../index.css';
-export default class SearchBar extends Component {
+class SearchBar extends Component {
     constructor(props) {
         super(props);
 
@@ -16,11 +19,14 @@ export default class SearchBar extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
+        this.props.fetchPokemon(this.state.term);
+        this.setState({term: ''});
     }
 
     render() {
         return (
-                <form className="form-inline" onSubmit={this.handleSubmit}>
+                <form className="form-inline mb-4" onSubmit={this.handleSubmit}>
                     <label className="sr-only" htmlFor="inlineFormInput">PokemonName</label>
                     <input 
                         type="text" 
@@ -35,3 +41,9 @@ export default class SearchBar extends Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({fetchPokemon}, dispatch);
+}
+
+export default connect (null, mapDispatchToProps)(SearchBar);

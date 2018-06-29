@@ -1,4 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { combineReducers } from 'redux';
+import PokemonReducer from './reducer_pokemon';
+
+
+const rootReducer = combineReducers({
+  pokemon: PokemonReducer
+});
+
+export default rootReducer;
