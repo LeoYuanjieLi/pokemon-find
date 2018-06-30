@@ -19,7 +19,6 @@ class SearchBar extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
         this.props.fetchPokemon(this.state.term);
         this.setState({term: ''});
     }
@@ -35,6 +34,7 @@ class SearchBar extends Component {
                         placeholder="Type a Pokemon Name!" 
                         value={this.state.term}
                         onChange={this.onInputChange}
+                        required
                         />
                     <button type="submit" className="btn btn-primary">Search</button>
                 </form>
