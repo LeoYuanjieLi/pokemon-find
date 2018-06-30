@@ -6,13 +6,14 @@ export default function(state=[], action) {
     switch (action.type) {
         
         case FETCH_POKEMON: 
-            if(!action.paylaod) {
+            if(!action.payload) {
+                console.log('Action received', action);
                 return state;
             }
-            else {
-                console.log('Action received', action.payload.data);
-                return [action.payload.data, ...state];
-            }
+            
+            console.log('Action received', action.payload.data);
+            return [action.payload.data, ...state];
+            
     }
 
     return state;
