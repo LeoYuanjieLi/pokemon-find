@@ -34,3 +34,7 @@ body {
 .btn {
   height: 32px;
 }
+
+.no-margin {
+  margin:auto;
+}
