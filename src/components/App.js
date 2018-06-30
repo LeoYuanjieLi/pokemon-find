@@ -6,9 +6,13 @@ import PokemonList from '../containers/pokemon_list';
 class App extends Component {
   render() {
     return (
-      <div className="search-bar">
-          <SearchBar />
-          <PokemonList />
+      <div>
+        <div className="search-bar">
+            <SearchBar/>
+        </div>
+        <div>
+            <PokemonList />          
+        </div>
       </div>
         
 

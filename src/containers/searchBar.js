@@ -26,7 +26,7 @@ class SearchBar extends Component {
     render() {
         return (
                 <form className="form-inline mb-4" onSubmit={this.handleSubmit}>
-                    <label className="sr-only" htmlFor="inlineFormInput">PokemonName</label>
+                    <label className="sr-only text-16px" htmlFor="inlineFormInput">PokemonName</label>
                     <input 
                         type="text" 
                         className="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-9" 
