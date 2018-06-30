@@ -19,8 +19,14 @@ class SearchBar extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.fetchPokemon(this.state.term);
-        this.setState({term: ''});
+        if(parseInt(this.state.term, 10) > 151) {
+            alert('We are classic, so we only have the original 151 pokemons!');
+        }
+        else{
+            this.props.fetchPokemon(this.state.term);
+            this.setState({term: ''});            
+        }
+
     }
 
     render() {

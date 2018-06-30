@@ -9,6 +9,10 @@ class PokemonList extends Component {
     }
 
     renderPokemon(pokemonData) {
+        if(!pokemonData) {
+            return
+        }
+
         return (
 
                 <div className="card d-inline-block pokemon-card shadow" key={pokemonData.id}>
@@ -35,7 +39,7 @@ class PokemonList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="pokemon-cards-list">
                 {this.props.pokemons.map(this.renderPokemon)}
             </div>
 

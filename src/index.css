@@ -1,7 +1,9 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 .search-bar {
@@ -37,4 +39,9 @@ body {
 
 .no-margin {
   margin:auto;
+}
+
+.pokemon-cards-list {
+  margin-left: 4.7%;
+  margin-right: 5%;
 }
