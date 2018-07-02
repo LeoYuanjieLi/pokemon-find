@@ -14,10 +14,13 @@ class SearchBar extends Component {
         };
         this.onInputChange = this.onInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toLowerCase = this.toLowerCase.bind(this);
     }
-
+    toLowerCase(term) {
+        return term.toLowerCase();
+    }
     onInputChange(e) {
-        this.setState({term: e.target.value});
+        this.setState({term: this.toLowerCase(e.target.value)});
     }
 
     handleSubmit(e) {
