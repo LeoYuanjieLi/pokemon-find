@@ -6,7 +6,13 @@ class PokemonList extends Component {
     constructor(props) {
         super(props);
         this.renderPokemon = this.renderPokemon.bind(this);
+        this.titleCase = this.titleCase.bind(this);
     }
+
+    titleCase(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
 
     renderPokemon(pokemonData) {
         if(!pokemonData) {
@@ -16,9 +22,11 @@ class PokemonList extends Component {
         return (
 
                 <div className="card d-inline-block pokemon-card shadow" key={pokemonData.id}>
-                    <img className="card-img-top" src={pokemonData.sprites.front_default} alt="Card image cap" />
+                    <img className="card-img-top" src={pokemonData.sprites.front_default} alt="Card" />
                     <div className="card-body">
-                        <h5 className="card-title">{pokemonData.name}</h5>
+                        <h5>Index: {pokemonData.id}</h5><h2 className="card-title">{this.titleCase(pokemonData.name)}</h2>
+
+                        <span className='no-margin'>Height: {pokemonData.height} </span><span className='no-margin'> Weight: {pokemonData.weight}</span>
                         <p className='no-margin'>Speed</p>
                         <ProgressBar className='no-margin' bsStyle="success" now={pokemonData.stats[0].base_stat} />
                         <p className='no-margin'>Special Defense</p>

@@ -8,7 +8,10 @@ class SearchBar extends Component {
     constructor(props) {
         super(props);
 
-        this.state= {term: ''};
+        this.state= {
+            term: '',
+            searched: []
+        };
         this.onInputChange = this.onInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -21,6 +24,8 @@ class SearchBar extends Component {
         e.preventDefault();
         if(parseInt(this.state.term, 10) > 151) {
             alert('We are classic, so we only have the original 151 pokemons!');
+        }else if (parseInt(this.state.term, 10) < 1) {
+            alert('Come on! You know that pokemon index cannot go below 1!');
         }
         else{
             this.props.fetchPokemon(this.state.term);

@@ -14,7 +14,7 @@ body {
 
 .pokemon-card {
   margin:5px;
-  width: 12%;
+  width: 15%;
 }
 
 .shadow {
@@ -44,4 +44,8 @@ body {
 .pokemon-cards-list {
   margin-left: 4.7%;
   margin-right: 5%;
+}
+
+.dropdown {
+  margin-left: 10px;
 }
